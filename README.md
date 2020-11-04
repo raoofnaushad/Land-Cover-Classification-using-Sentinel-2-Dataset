@@ -1,4 +1,4 @@
-# Land Cover and Land Use Classification using Sentinel-2 Dataset and Deep Learning
+# Land Cover and Land Use Classification using Sentinel-2 Satellite Imagery With Deep Learning
 ----------------------------------------------------------------------
 CORRECT BLOG LINK
 For better read <> Check out this [blog](https://medium.com/p/951faa0cbb31/edit)
