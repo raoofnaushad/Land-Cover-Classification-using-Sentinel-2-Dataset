@@ -1,5 +1,8 @@
 # Land Cover and Land Use Classification using Sentinel-2 Dataset and Deep Learning
 ----------------------------------------------------------------------
+CORRECT BLOG LINK
+For better read <> Check out this [blog](https://medium.com/p/951faa0cbb31/edit)
+
 ### Scenario
 Many government programs are taking enormous efforts to convert make satellite images free and open sourced inorder to bring in innovation and entrepreunership. This is being used by many domains and are coming up with good results. Inorder to get great insights and knowldge from this satellite data we have to segment and understand it for further studies. Such type of a task is Landcover classification which come up and automate the process of identifying how the land area is used. We have seen a great spike in the growth of Machine learning and Artificial intelligence. Almost all domain in the world is using Deep learning techniques to improve the performance and are benefiting from this. So here we try to use deep learning methods to work with land cover classification.
 
