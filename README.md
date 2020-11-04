@@ -6,7 +6,7 @@ Many government programs are taking enormous efforts to convert make satellite i
 
 ### Overview
 
-![Overview Image](data/reference_images/overview.png)
+![Overview Image](data/reference_images/overview.png)<br>
 [Source](https://arxiv.org/pdf/1709.00029.pdf)
 
 A satellite scans the Earth to acquire images of it. Patches extracted out of these images are used for classification.
@@ -64,14 +64,14 @@ or land cover.
 
 Some change detection examples are illustrated below
 
-![Change Detection-1](data/reference_images/change_1.png)
+![Change Detection-1](data/reference_images/change_1.png) <br>
 [Source](https://arxiv.org/pdf/1709.00029.pdf)
 
 
-![Change Detection-2](data/reference_images/change_2.png)
+![Change Detection-2](data/reference_images/change_2.png)<br>
 [Source](https://arxiv.org/pdf/1709.00029.pdf)
 
-![Change Detection-3](data/reference_images/change_3.png)
+![Change Detection-3](data/reference_images/change_3.png)<br>
 [Source](https://arxiv.org/pdf/1709.00029.pdf)
 
 
