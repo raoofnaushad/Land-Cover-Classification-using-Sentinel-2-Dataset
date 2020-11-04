@@ -4,7 +4,7 @@ CORRECT BLOG LINK
 For better read <> Check out this [blog](https://medium.com/p/951faa0cbb31/edit)
 
 ### Scenario
-Many government programs are taking enormous efforts to convert make satellite images free and open sourced inorder to bring in innovation and entrepreunership. This is being used by many domains and are coming up with good results. Inorder to get great insights and knowldge from this satellite data we have to segment and understand it for further studies. Such type of a task is Landcover classification which come up and automate the process of identifying how the land area is used. We have seen a great spike in the growth of Machine learning and Artificial intelligence. Almost all domain in the world is using Deep learning techniques to improve the performance and are benefiting from this. So here we try to use deep learning methods to work with land cover classification.
+Many government programs are taking enormous efforts to make satellite images free and open sourced inorder to bring in innovation and entrepreunership. This is being used by many domains and are coming up with good results. Inorder to get great insights and knowledge from this satellite data we have to segment and understand it for further studies. Such type of a task is Landcover classification which come up and automate the process of identifying how the land area is used. We have seen a great spike in the growth of Machine learning and Artificial intelligence. Almost all domain in the world is using Deep learning techniques to improve the performance and are benefiting from this. So here we try to use deep learning methods to work with land cover classification.
 
 
 ### Overview
@@ -17,37 +17,28 @@ The aim is to automatically provide labels describing the represented physical l
 purpose, an image patch is feed into a classifier, in this illustration a neural network, and the classifier outputs the class shown
 on the image patch.
 
-we use mutli-spectral image data provided by the Sentinel-2A satellite in order to address the challenge
-of land use and land cover classification. Sentinel-2A is one satellite in the two-satellite constellation of the identical land monitoring satellites Sentinel-2A and Sentinel-2B. 
-
 This satellite conver 13 spectral bands, where the  three bands B01, B09 and B10 are intended to be used for the correction of atmospheric effects (e.g., aerosols, cirrus or water vapor). The remaining bands are
 primarily intended to identify and monitor land use and land cover classes. Each satellite will deliver imagery for at least 7 years with a spatial resolution of up to 10 meters per pixel.
 
 In order to improve the chance of getting valuable image patches, they have selected satellite images with a low cloud level. Besides the possibility to generate a cloud mask, ESA provides a cloud level value for each satellite image allowing to quickly select images with a low percentage of clouds covering the land scene.
 
 ### Dataset
-Whenever we are working with supervised machine learning we need a dataset to train the model on, here we choose EuroSAT. 
-1) EuroSAT dataset is open sourced. 
-2) It consist of satellite images RGB and multi spectral - covering 13 spectral bands (including visible, newar infrared, shortwave infrared) with 10 unique classes. 
-3) It consist of 27000 labeled and geo referenced images.
-4) Geo-referenced.
-5) The dataset is published and benchmarked with CNN by a paper titled **EuroSAT: A Novel Dataset and Deep Learning Benchmark for Land Use and Land Cover
-Classification**  and they have made dataset public through this [repo]( https://github.com/phelber/eurosat).
+1. EuroSAT dataset is open sourced.
+2. It consist of satellite images RGB and multi spectral - covering 13 spectral bands (including visible, newar infrared, shortwave infrared) with 10 unique classes.
+3. It consist of 27000 labeled and geo-referenced images.
+4. The dataset is published and benchmarked with CNN by a paper titled EuroSAT: A Novel Dataset and Deep Learning Benchmark for Land Use and Land Cover Classification and they have made dataset public through this repo.
 
-##### Some issues of satellite data handled by dataset:
-1) Cloud appearence
-2) Color casting due to atmospheric effects
-3) Dead/pixels 
-4) Ice or snow
+The authors were able to sort out some common issues that come up with studying satellite data and were able to sort it out for land use and land cover classification.
+
+* Cloud appearence
+* Color casting due to atmospheric effects
+* Dead/pixels
+* Ice or snow
 
 
 
 ##### Band Evaluation
-In order to evaluate the performance of deep CNNs using single-band images as well shortwave-infrared and colorinfrared band combinations, we used the pretrained ResNet-50 with a fixed training-test split to compare the performance of the different spectral bands.
-
-For evaluating single-band image they inserted the information from a single spectral band on all three input channels.
-
-Bands with a lower spatial resolution have been upsampled to 10 meters per pixel using cubic-spline interpolation.
+In order to evaluate the performance of deep CNNs in a multi spectral dataset using single-band images as well shortwave-infrared and color infrared band combinations, we used the pretrained wide ResNet-50 with a fixed training-test split to compare the performance of the different spectral bands. For evaluating single-band image they inserted the information from a single spectral band on all three input channels. Bands with a lower spatial resolution have been up sampled to 10 meters per pixel using cubic-spline interpolation.
 
 
 ### Working
@@ -59,13 +50,8 @@ We write all our script in pytorch. Split the dataset into 10/90 test and train 
 
 
 ### Applications
-With this dataset and high classification accuracy we are able to look for change detection in Sentinel-2 satellite images. Since the Sentinel-2 satellite constellation will scan the
-Earth’s land surface for about the next 20 - 30 years on a
-repeat cycle of about five days, a trained classifier can be used
-for monitoring land surfaces and detect changes in land use
-or land cover. 
+Since the Sentinel-2 satellite constellation will scan the Earth's land surface for about the next 20–30 years on a repeat cycle of about five days, a trained classifier can be used for monitoring land surfaces and detect changes in land use or land cover. These land cover changes can be used for various studies and purposes. In future may be we can add a real time open sourced web network for everyone in the world to see how the world around them changes in years. Some changes that are understood in various years on the same place is shown below. This is also part of the paper.
 
-Some change detection examples are illustrated below
 
 ![Change Detection-1](data/reference_images/change_1.png) <br>
 [Source](https://arxiv.org/pdf/1709.00029.pdf)
@@ -80,8 +66,7 @@ Some change detection examples are illustrated below
 
 ### Challenges
 
-There are lots of challenges while evaluating raw images from satellite for prediction which includes Cloud appearence, Color casting due to atmospheric effects, Dead/pixels, Ice or snow. More than that a classification system trained with 64x64 image patches does not allow a finely graduated per-pixel  segmentation, it cannot only detect changes as shown in the previous examples, but it can also facilitate keeping maps up-to-date. Also when there is mixed elemets in the same image patches that can also lead to trouble. 
-
+There are lots of challenges while evaluating raw images from satellite for prediction which includes Cloud appearence, Color casting due to atmospheric effects, Dead/pixels, Ice or snow. More than that a classification system trained with 64x64 image patches does not allow a finely graduated per-pixel segmentation. Also when there is mixed elemets in the same image patches that can also lead to trouble.
 
 
 
