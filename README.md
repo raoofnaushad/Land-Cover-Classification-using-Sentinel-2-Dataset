@@ -6,7 +6,7 @@ Many government programs are taking enormous efforts to convert make satellite i
 
 ### Overview
 
-[Overview Image](data/reference_images/overview.png)
+![Overview Image](data/reference_images/overview.png)
 [Source](https://arxiv.org/pdf/1709.00029.pdf)
 
 A satellite scans the Earth to acquire images of it. Patches extracted out of these images are used for classification.
@@ -49,7 +49,10 @@ Bands with a lower spatial resolution have been upsampled to 10 meters per pixel
 
 ### Working
 
-
+Recent years has shown greater impact on the use of deepl learning on all domains more than other machine learning model. We follows the same scenario and use deep learning => Convolutional Neural networks which is best for these kind of scenario. 
+We also use transfer learning method, where we download a pretrained version of a model trained on a larger dataset (here it is image classification dataset ILSVRC-2012). Then we freeze the some part of the model and fine tune the newly added layers and finally tune all the layers to increase the accuracy.
+We also use scheduler to optimize the learning rate, then we use gradient clipping to overcome to prevent exploding gradients.
+We write all our script in pytorch. Split the dataset into 10/90 test and train dataset. And used the model which gave the most validation accuracy.
 
 
 ### Applications
@@ -61,14 +64,14 @@ or land cover.
 
 Some change detection examples are illustrated below
 
-[Change Detection-1](data/reference_images/change_1.png)
+![Change Detection-1](data/reference_images/change_1.png)
 [Source](https://arxiv.org/pdf/1709.00029.pdf)
 
 
-[Change Detection-2](data/reference_images/change_2.png)
+![Change Detection-2](data/reference_images/change_2.png)
 [Source](https://arxiv.org/pdf/1709.00029.pdf)
 
-[Change Detection-3](data/reference_images/change_3.png)
+![Change Detection-3](data/reference_images/change_3.png)
 [Source](https://arxiv.org/pdf/1709.00029.pdf)
 
 
