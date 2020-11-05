@@ -3,6 +3,14 @@
 CORRECT BLOG LINK
 For better read <> Check out this [blog](https://medium.com/p/951faa0cbb31/edit)
 
+For implementation:
+
+* Run the notebook to generate the model.
+* Dataset can be downloaded from the link [here](https://github.com/phelber/eurosat). 
+* Save model in the Models directory
+* Install required packages
+* Run app.py (send an image file as a request to the classify end poing and will get the class for it).
+
 ### Scenario
 Many government programs are taking enormous efforts to make satellite images free and open sourced inorder to bring in innovation and entrepreunership. This is being used by many domains and are coming up with good results. Inorder to get great insights and knowledge from this satellite data we have to segment and understand it for further studies. Such type of a task is Landcover classification which come up and automate the process of identifying how the land area is used. We have seen a great spike in the growth of Machine learning and Artificial intelligence. Almost all domain in the world is using Deep learning techniques to improve the performance and are benefiting from this. So here we try to use deep learning methods to work with land cover classification.
 
@@ -43,11 +51,16 @@ In order to evaluate the performance of deep CNNs in a multi spectral dataset us
 
 ### Working
 
-Recent years has shown greater impact on the use of deepl learning on all domains more than other machine learning model. We follows the same scenario and use deep learning => Convolutional Neural networks which is best for these kind of scenario. 
-We also use transfer learning method, where we download a pretrained version of a model trained on a larger dataset (here it is image classification dataset ILSVRC-2012). Then we freeze the some part of the model and fine tune the newly added layers and finally tune all the layers to increase the accuracy.
-We also use scheduler to optimize the learning rate, then we use gradient clipping to overcome to prevent exploding gradients.
-We write all our script in pytorch. Split the dataset into 10/90 test and train dataset. And used the model which gave the most validation accuracy.
+Here we use deep learning along with transfer learning to improve the accuracy and also make the training faster. We will work on __Pytorch__ as the framework for our deep learning model.
 
+We can get the dataset from [here](https://github.com/phelber/eurosat). Dataset is provided in both `.tiff` format and also `image` format. `.tiff` format can be used to extract other spectral information since they provided multi spectral data with 13 different spectrum, We use RGB because pretrained models are already trained in RGB images so we can take the image dataset and work on it.
+
+
+We have to create the dataset class, transformations and dataloaders. We create a EuroSAT dataset class inherited from torch dataset library. Creating our own method to get data which takes the name of the file and taking it from each directory. We also add transforms as some data augmentation and preprocessing stepfor using it with the pretrained model. Then we create dataset and data loader for training and validation with the preferred batch_size, feel free to experiment with more transformation which might help you to improve accuracy.
+
+For creating the model. We use transfer learning, here we use __wide_resnet50_2__ model as a pretrained model which is already trained on a huge image dataset. We change the classification layer of wide_resnet50_2 with some additional sequential layers for fine tuning. This added layer includes Linear layer(n_inputs, 256) => ReLU layer => Dropout Layer => Linear Layer (256, num_classes) => LogSoftmax layer In the model class we also include freeze and unfreeze function in order to select training the whole architecture or only the classification layer we added.
+
+We trained the model for 10 epochs and save the best model based on the accuracy and losses.
 
 ### Applications
 Since the Sentinel-2 satellite constellation will scan the Earth's land surface for about the next 20–30 years on a repeat cycle of about five days, a trained classifier can be used for monitoring land surfaces and detect changes in land use or land cover. These land cover changes can be used for various studies and purposes. In future may be we can add a real time open sourced web network for everyone in the world to see how the world around them changes in years. Some changes that are understood in various years on the same place is shown below. This is also part of the paper.
