@@ -1,7 +1,7 @@
 # Land Cover and Land Use Classification using Sentinel-2 Satellite Imagery With Deep Learning
 ----------------------------------------------------------------------
 
-For better understanding whole idea <> Check out this [blog](https://raoofnaushad7.medium.com/applying-deep-learning-on-satellite-imagery-951faa0cbb31)
+__For better understanding whole idea <> [Check out this blog](https://raoofnaushad7.medium.com/applying-deep-learning-on-satellite-imagery-951faa0cbb31)__
 
 For implementation:
 
