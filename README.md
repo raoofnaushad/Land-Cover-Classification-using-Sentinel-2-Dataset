@@ -49,7 +49,7 @@ Some __prediction results__ are shown below
 
 __Confusion Matrix__ 
 
-![Confusion_Matrix](data/reference_images/confusion matrix.png)
+![Confusion_Matrix](data/reference_images/confusion_matrix.png)
 
 
 ### Dataset
