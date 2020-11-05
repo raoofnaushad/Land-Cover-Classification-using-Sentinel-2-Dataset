@@ -11,6 +11,7 @@ For implementation:
 * Install required packages
 * Run app.py (send an image file as a request to the classify end poing and will get the class for it).
 
+
 ### Scenario
 Many government programs are taking enormous efforts to make satellite images free and open sourced inorder to bring in innovation and entrepreunership. This is being used by many domains and are coming up with good results. Inorder to get great insights and knowledge from this satellite data we have to segment and understand it for further studies. Such type of a task is Landcover classification which come up and automate the process of identifying how the land area is used. We have seen a great spike in the growth of Machine learning and Artificial intelligence. Almost all domain in the world is using Deep learning techniques to improve the performance and are benefiting from this. So here we try to use deep learning methods to work with land cover classification.
 
@@ -29,6 +30,27 @@ This satellite conver 13 spectral bands, where the  three bands B01, B09 and B10
 primarily intended to identify and monitor land use and land cover classes. Each satellite will deliver imagery for at least 7 years with a spatial resolution of up to 10 meters per pixel.
 
 In order to improve the chance of getting valuable image patches, they have selected satellite images with a low cloud level. Besides the possibility to generate a cloud mask, ESA provides a cloud level value for each satellite image allowing to quickly select images with a low percentage of clouds covering the land scene.
+
+
+### Results
+
+Below shows the graph of __accuracy__ and __losses__ against __epochs__ for both training and testing data.
+![Training and Validation loss with Epochs](data/reference_images/loss_without_scheduler.png)
+
+![Training and Validation Accuracy with Epochs](data/reference_images/Accuracy_without_scheduler.png)
+
+Some __prediction results__ are shown below
+
+![result-1](data/reference_images/sampple_pred_1.png)
+
+![result-2](data/reference_images/sample_pred_2.png)
+
+![result-3](data/reference_images/sample_pred_3.png)
+
+__Confusion Matrix__ 
+
+![Confusion_Matrix](data/reference_images/confusion matrix.png)
+
 
 ### Dataset
 1. EuroSAT dataset is open sourced.
