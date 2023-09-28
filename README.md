@@ -3,7 +3,7 @@
 __This work has been published on <> [Sensors - MDPI](https://www.mdpi.com/1424-8220/21/23/8083)__
 
 
-__For better understanding whole idea <> [Check out this blog](https://raoofnaushad7.medium.com/applying-deep-learning-on-satellite-imagery-951faa0cbb31)__
+__For better understanding whole idea <> [Check out this blog](https://medium.com/datadriveninvestor/applying-deep-learning-on-satellite-imagery-classification-5f2588b932c1)__
 
 For implementation:
 
